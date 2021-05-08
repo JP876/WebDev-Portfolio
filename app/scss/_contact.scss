@@ -1,0 +1,52 @@
+.contact {
+    background-image: url('../assets/Large-Triangles.svg');
+    background-size: cover;
+    background-position: center;
+    height: 52rem;
+
+    @include breakpoint-down(large) {
+        height: 48rem;
+    }
+
+    &__info {
+        margin-top: 4rem;
+        flex: 0 0 50%;
+
+        p {
+            margin: 2rem 0;
+            font-size: $font-med2;
+            color: $darkerGrey;
+            letter-spacing: 1.2px;
+            line-height: 1.66;
+
+            @include breakpoint-down(large) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        h5 {
+            color: $darkerGrey;
+            letter-spacing: 1.4px;
+
+            span {
+                color: $primary;
+            }
+        }
+
+        @include breakpoint-down(large) {
+            margin-top: 0rem;
+        }
+    }
+    &__img {
+        background-image: url('../assets/undraw_emails_6uqr.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 37.4rem;
+        width: 100%;
+
+        @include breakpoint-down(large) {
+            height: 33.6rem;
+        }
+    }
+}

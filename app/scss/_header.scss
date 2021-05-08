@@ -1,0 +1,67 @@
+.header {
+    position: relative;
+    background-color: $white;
+    z-index: 1;
+    height: 6vh;
+
+    nav {
+        height: 100%;
+    }
+
+    &__logo {
+        color: $lightPrimary;
+        font-size: $font-med;
+    }
+
+    &__links {
+        a {
+            color: $primary;
+            font-size: $font-med;
+            position: relative;
+            transition: $short-transition;
+            -webkit-transition: $short-transition;
+            -moz-transition: $short-transition;
+            -ms-transition: $short-transition;
+            -o-transition: $short-transition;
+
+            &:not(:last-child) {
+                margin-right: 4.8rem;
+            }
+
+            &:hover {
+                color: $darkPrimary;
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            &::before {
+                background: $darkLightPrimaryGrad;
+                content: '';
+                display: block;
+                position: absolute;
+                opacity: 0;
+                height: 4px;
+                width: 132%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                bottom: -1.2rem;
+                border-radius: 2rem;
+                -webkit-border-radius: 2rem;
+                -moz-border-radius: 2rem;
+                -ms-border-radius: 2rem;
+                -o-border-radius: 2rem;
+                -webkit-transform: translate(-50%, 0);
+                -moz-transform: translate(-50%, 0);
+                -ms-transform: translate(-50%, 0);
+                -o-transform: translate(-50%, 0);
+                transition: $short-transition;
+                -webkit-transition: $short-transition;
+                -moz-transition: $short-transition;
+                -ms-transition: $short-transition;
+                -o-transition: $short-transition;
+            }
+        }
+    }
+}

@@ -1,0 +1,209 @@
+.projects {
+    margin-top: 4.2rem;
+
+    @include breakpoint-down(large) {
+        margin-top: 2.8rem;
+    }
+    @include breakpoint-down(medium) {
+        margin-top: 2rem;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 6rem;
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 5.2rem;
+        }
+    }
+
+    h3 {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    &__box {
+        width: 80%;
+        margin: 0 auto;
+        padding: 2.4rem 4.8rem;
+        //padding: 2.8rem 7.6rem;
+        box-shadow: 0 1rem 1rem rgba($darkerGrey, 0.14), 0 0 3rem rgba($darkerGrey, 0.14);
+        border-radius: 0.6rem;
+        -webkit-border-radius: 0.6rem;
+        -moz-border-radius: 0.6rem;
+        -ms-border-radius: 0.6rem;
+        -o-border-radius: 0.6rem;
+
+        &:not(:last-child) {
+            margin-bottom: 6.8rem;
+        }
+
+        @include breakpoint-down(large) {
+            padding: 1.8rem 4rem;
+            width: 86%;
+        }
+        @include breakpoint-down(medium) {
+            padding: 1.8rem 2.8rem;
+        }
+    }
+
+    &__project {
+        background-color: $white;
+        transform-style: preserve-3d;
+
+        &-technologies {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.4rem 2rem;
+            margin-top: 3rem;
+
+            & h6 {
+                margin: 0;
+
+                &:not(:first-child) {
+                    text-align: center;
+                }
+            }
+
+            @include breakpoint-down(medium) {
+                margin-top: 1.6rem;
+            }
+        }
+
+        &-info {
+            margin-top: 4.2rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 3.2rem;
+
+            p {
+                color: $darkerGrey;
+                letter-spacing: 1.2px;
+                line-height: 1.4;
+                text-align: justify;
+            }
+
+            @include breakpoint-down(medium) {
+                margin-top: 2.8rem;
+                flex-direction: column;
+            }
+        }
+
+        &-btns {
+            flex: 0 0 30%;
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            a {
+                width: 18rem;
+                text-align: center;
+
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+
+                    @include breakpoint-down(medium) {
+                        margin: 0rem;
+                    }
+                }
+            }
+
+            @include breakpoint-down(medium) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        h6 {
+            color: $darkGrey;
+        }
+
+        &-images {
+            width: 100%;
+            position: relative;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                display: block;
+                margin: 0 auto;
+                border-radius: 0.6rem;
+                -webkit-border-radius: 0.6rem;
+                -moz-border-radius: 0.6rem;
+                -ms-border-radius: 0.6rem;
+                -o-border-radius: 0.6rem;
+            }
+        }
+    }
+
+    &__carousel {
+        margin: 0 auto;
+        overflow: hidden;
+        //position: relative;
+
+        &-item-0,
+        &-item-1,
+        &-item--hidden-0,
+        &-item--hidden-1 {
+            display: none;
+        }
+
+        &-item--visible-0,
+        &-item--visible-1 {
+            display: block;
+            animation: fadeVisibility 0.5s;
+            -webkit-animation: fadeVisibility 0.5s;
+        }
+
+        &-item-0 img,
+        &-item-1 img {
+            display: block;
+            margin: 0 auto;
+            width: 45.4%;
+            height: auto;
+            position: absolute;
+            top: 15.6%;
+            left: 26.8%;
+            border-radius: 0.4rem;
+            -webkit-border-radius: 0.4rem;
+            -moz-border-radius: 0.4rem;
+            -ms-border-radius: 0.4rem;
+            -o-border-radius: 0.4rem;
+            transform: scaleY(1.02);
+            -webkit-transform: scaleY(1.02);
+            -moz-transform: scaleY(1.02);
+            -ms-transform: scaleY(1.02);
+            -o-transform: scaleY(1.02);
+        }
+
+        &-actions {
+            padding: 0 1.8rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+        }
+    }
+}
+
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: opacity linear 1s;
+        -webkit-transform: opacity linear 1s;
+        -moz-transform: opacity linear 1s;
+        -ms-transform: opacity linear 1s;
+        -o-transform: opacity linear 1s;
+    }
+}

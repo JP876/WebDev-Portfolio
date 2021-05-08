@@ -1,0 +1,99 @@
+.hero {
+    height: 120vh;
+    background-image: url('../assets/Large-Triangles.svg');
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 120vh,
+        79.4% 120vh,
+        calc(79.4% - 13.2rem) 100vh,
+        calc(20.68% + 13.2rem) 100vh,
+        20.68% 120vh,
+        0 120vh
+    );
+
+    @include breakpoint-down(large) {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 120vh,
+            90% 120vh,
+            calc(90% - 11rem) 100vh,
+            calc(10% + 11rem) 100vh,
+            10% 120vh,
+            0 120vh
+        );
+    }
+    @include breakpoint-down(medium) {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 116vh,
+            90% 116vh,
+            calc(90% - 11rem) 100vh,
+            calc(10% + 11rem) 100vh,
+            10% 116vh,
+            0 116vh
+        );
+    }
+
+    &__box {
+        height: 100%;
+        position: relative;
+    }
+
+    &__text {
+        width: 56%;
+        position: absolute;
+        top: 8%;
+
+        a {
+            margin-top: 1rem;
+        }
+
+        @include breakpoint-down(medium) {
+            width: 100%;
+        }
+    }
+
+    &__img {
+        background-image: url('../assets/undraw_web_developer_p3e5.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 56%;
+        height: 56%;
+        position: absolute;
+        right: 0;
+        top: 24%;
+
+        @include breakpoint-down(large) {
+            right: 4%;
+            top: 28%;
+        }
+        @include breakpoint-down(medium) {
+            left: 50%;
+            top: 32%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -moz-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            -o-transform: translateX(-50%);
+        }
+    }
+
+    &__technologies {
+        position: absolute;
+        bottom: 0;
+    }
+
+    &__icon-container {
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+    }
+    &__icon {
+        height: 5rem;
+    }
+}

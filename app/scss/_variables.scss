@@ -1,0 +1,22 @@
+// Colors
+$darkerGrey: #303128;
+$darkGrey: #d2d3c9;
+$grey: #e9eae5;
+$white: #f9f9f8;
+$lightPrimary: #11b0aa;
+$primary: #0e918c;
+$darkPrimary: #085350;
+$secondary: #bb2205;
+
+// Font Sizes
+$font-sm: 1.4rem;
+$font-med: 2rem;
+$font-med2: 2.4rem;
+$font-lg: 2.8rem;
+$font-xlg: 5.2rem;
+
+// Transitions
+$short-transition: all 200ms ease-in-out;
+
+// Gradients
+$darkLightPrimaryGrad: linear-gradient(to right, $darkPrimary, $lightPrimary);

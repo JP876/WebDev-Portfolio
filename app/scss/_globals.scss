@@ -1,0 +1,205 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: $white;
+    font-family: 'Kiwi Maru', serif;
+    font-size: $font-med;
+    font-weight: 300;
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0px;
+    font-weight: 300;
+    color: $lightPrimary;
+    line-height: 1.4;
+    letter-spacing: 2.4px;
+}
+
+h1 {
+    font-size: 5.4rem;
+    margin-bottom: 2.4rem;
+
+    @include breakpoint-down(large) {
+        font-size: 4.2rem;
+    }
+}
+h2 {
+    font-size: 4.8rem;
+    margin-bottom: 2.4rem;
+
+    @include breakpoint-down(large) {
+        font-size: 4rem;
+    }
+}
+h3 {
+    font-size: 3.2rem;
+    margin-bottom: 2.4rem;
+
+    @include breakpoint-down(large) {
+        font-size: 2.8rem;
+        //margin-bottom: 1.2rem;
+    }
+}
+h4 {
+    color: $primary;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+
+    @include breakpoint-down(large) {
+        font-size: 2rem;
+    }
+}
+h5 {
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+    color: $primary;
+
+    @include breakpoint-down(large) {
+        font-size: 1.8rem;
+    }
+}
+
+h6 {
+    font-size: 1.52rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    color: $darkerGrey;
+
+    @include breakpoint-down(large) {
+        font-size: 1.4rem;
+    }
+}
+
+p {
+    //line-height: 1.48;
+    //margin-bottom: 3.6rem;
+}
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-sa {
+        justify-content: space-around;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+    &-center {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.container {
+    max-width: 110rem;
+    margin: 0 auto;
+
+    @include breakpoint-down(large) {
+        padding: 0 4rem;
+    }
+
+    &--pt {
+        padding-top: 8.4rem;
+    }
+    &--pr {
+        padding-right: 2.4rem;
+    }
+    &--pb {
+        padding-bottom: 8.4rem;
+    }
+    &--pl {
+        padding-left: 2.4rem;
+    }
+    &--py {
+        padding-top: 8.4rem;
+        padding-bottom: 8.4rem;
+
+        @include breakpoint-down(large) {
+            padding: 8rem 4rem;
+        }
+    }
+    &--px {
+        padding-right: 2.4rem;
+        padding-left: 2.4rem;
+    }
+    &--pAll {
+        padding: 8.4rem 2.4rem;
+    }
+}
+
+button,
+.button {
+    display: inline-block;
+    font-size: $font-sm;
+    padding: 1rem 2.2rem;
+    border-radius: 0.8rem;
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    -ms-border-radius: 0.8rem;
+    -o-border-radius: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    background: $primary;
+    border: none;
+    box-shadow: 0 0.6rem 1.2rem rgba($darkerGrey, 0.28);
+    color: $white;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: $short-transition;
+    -webkit-transition: $short-transition;
+    -moz-transition: $short-transition;
+    -ms-transition: $short-transition;
+    -o-transition: $short-transition;
+
+    &:hover {
+        opacity: 0.8;
+        transform: translateY(-2px) scale(1.06);
+        -webkit-transform: translateY(-2px) scale(1.06);
+        -moz-transform: translateY(-2px) scale(1.06);
+        -ms-transform: translateY(-2px) scale(1.06);
+        -o-transform: translateY(-2px) scale(1.06);
+    }
+
+    @include breakpoint-down(large) {
+        padding: 0.8rem 1.8rem;
+        letter-spacing: 1.2px;
+    }
+
+    &__roundedBtn {
+        border: 2px solid $primary;
+        background: rgba($primary, 0.6);
+        padding: 0rem 1.2rem;
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+}
