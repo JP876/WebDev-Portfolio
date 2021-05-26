@@ -4,8 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "watch:sass": "node-sass app/scss/style.scss ./css/style.css -w",
-        "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+        "watch:sass": "node-sass app/scss/style.scss ./css/style.css -w"
     },
     "keywords": [],
     "author": "",
