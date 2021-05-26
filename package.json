@@ -4,12 +4,16 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "watch:sass": "node-sass app/scss/style.scss ./css/style.css -w"
+        "watch:sass": "node-sass app/scss/style.scss ./css/style.css -w",
+        "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "node-sass": "^5.0.0"
+    },
+    "engines": {
+        "node": "12.x"
     }
 }
