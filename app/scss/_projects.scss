@@ -1,31 +1,37 @@
 .projects {
-    margin-top: 4.2rem;
+    padding-top: 4.2rem;
 
-    @include breakpoint-down(large) {
-        margin-top: 2.8rem;
-    }
     @include breakpoint-down(medium) {
-        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    @include breakpoint-down(small) {
+        padding-top: 1.4rem;
     }
 
     h2 {
-        text-align: center;
+        display: inline-block;
         margin-bottom: 6rem;
+        padding: 0 1.6rem 0.4rem 1.6rem;
+        border-bottom: 2px solid $lightPrimary;
 
         @include breakpoint-down(medium) {
-            margin-bottom: 5.2rem;
+            margin-bottom: 4.8rem;
         }
     }
 
     h3 {
         text-align: center;
         margin-bottom: 4rem;
+
+        @include breakpoint-down(small) {
+            margin-bottom: 2.2rem;
+        }
     }
 
     &__box {
         width: 80%;
         margin: 0 auto;
-        padding: 2.4rem 4.8rem;
+        padding: 2.4rem 4rem;
         //padding: 2.8rem 7.6rem;
         box-shadow: 0 1rem 1rem rgba($darkerGrey, 0.14), 0 0 3rem rgba($darkerGrey, 0.14);
         border-radius: 0.6rem;
@@ -38,48 +44,37 @@
             margin-bottom: 6.8rem;
         }
 
-        @include breakpoint-down(large) {
-            padding: 1.8rem 4rem;
-            width: 86%;
-        }
         @include breakpoint-down(medium) {
             padding: 1.8rem 2.8rem;
+            width: 100%;
+        }
+        @include breakpoint-down(medium) {
+            padding: 1rem 2rem;
+            width: 100%;
         }
     }
 
     &__project {
         background-color: $white;
-        transform-style: preserve-3d;
 
         &-technologies {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1.4rem 2rem;
-            margin-top: 3rem;
+            display: flex;
+            padding: 1.2rem 0 0.8rem 0;
 
             & h6 {
-                margin: 0;
-
                 &:not(:first-child) {
-                    text-align: center;
+                    margin-left: 1.8rem;
                 }
-            }
-
-            @include breakpoint-down(medium) {
-                margin-top: 1.6rem;
             }
         }
 
         &-info {
-            margin-top: 4.2rem;
-            display: flex;
-            justify-content: space-between;
-            gap: 3.2rem;
+            margin-top: 3.6rem;
 
             p {
                 color: $darkerGrey;
-                letter-spacing: 1.2px;
-                line-height: 1.4;
+                letter-spacing: 1.4px;
+                line-height: 1.6;
                 text-align: justify;
             }
 
@@ -87,29 +82,27 @@
                 margin-top: 2.8rem;
                 flex-direction: column;
             }
+            @include breakpoint-down(small) {
+                margin-top: 2.2rem;
+            }
         }
 
         &-btns {
-            flex: 0 0 30%;
-            text-align: right;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            border-top: 1px solid $darkGrey;
+            padding-top: 2.4rem;
 
             a {
                 width: 18rem;
                 text-align: center;
 
                 &:not(:last-child) {
-                    margin-bottom: 2rem;
-
-                    @include breakpoint-down(medium) {
-                        margin: 0rem;
-                    }
+                    margin-right: 2rem;
                 }
             }
 
             @include breakpoint-down(medium) {
+                padding: 1.6rem 0 0.6rem 0;
+                display: flex;
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
@@ -191,19 +184,5 @@
             -ms-transform: translateY(-50%);
             -o-transform: translateY(-50%);
         }
-    }
-}
-
-@keyframes fadeVisibility {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-        transform: opacity linear 1s;
-        -webkit-transform: opacity linear 1s;
-        -moz-transform: opacity linear 1s;
-        -ms-transform: opacity linear 1s;
-        -o-transform: opacity linear 1s;
     }
 }

@@ -16,6 +16,10 @@ body {
     font-family: 'Kiwi Maru', serif;
     font-size: $font-med;
     font-weight: 300;
+
+    &.noscroll {
+        overflow: hidden;
+    }
 }
 
 a,
@@ -41,6 +45,12 @@ h1 {
     @include breakpoint-down(large) {
         font-size: 4.2rem;
     }
+    @include breakpoint-down(medium) {
+        font-size: 3.6rem;
+    }
+    @include breakpoint-down(small) {
+        font-size: 3rem;
+    }
 }
 h2 {
     font-size: 4.8rem;
@@ -48,6 +58,12 @@ h2 {
 
     @include breakpoint-down(large) {
         font-size: 4rem;
+    }
+    @include breakpoint-down(medium) {
+        font-size: 3.2rem;
+    }
+    @include breakpoint-down(small) {
+        font-size: 2.4rem;
     }
 }
 h3 {
@@ -58,6 +74,12 @@ h3 {
         font-size: 2.8rem;
         //margin-bottom: 1.2rem;
     }
+    @include breakpoint-down(medium) {
+        font-size: 2.4rem;
+    }
+    @include breakpoint-down(small) {
+        font-size: 1.8rem;
+    }
 }
 h4 {
     color: $primary;
@@ -66,6 +88,12 @@ h4 {
 
     @include breakpoint-down(large) {
         font-size: 2rem;
+    }
+    @include breakpoint-down(medium) {
+        font-size: 1.8rem;
+    }
+    @include breakpoint-down(small) {
+        font-size: 1.4rem;
     }
 }
 h5 {
@@ -76,22 +104,51 @@ h5 {
     @include breakpoint-down(large) {
         font-size: 1.8rem;
     }
+    @include breakpoint-down(medium) {
+        font-size: 1.4rem;
+    }
+    @include breakpoint-down(small) {
+        font-size: 1.4rem;
+    }
 }
 
 h6 {
     font-size: 1.52rem;
     margin-bottom: 1rem;
-    line-height: 1.1;
+
     color: $darkerGrey;
 
     @include breakpoint-down(large) {
         font-size: 1.4rem;
     }
+    @include breakpoint-down(medium) {
+        font-size: 1.4rem;
+    }
+    @include breakpoint-down(small) {
+        font-size: 1.2rem;
+    }
 }
 
 p {
-    //line-height: 1.48;
-    //margin-bottom: 3.6rem;
+    color: $darkerGrey;
+    @include breakpoint-down(medium) {
+        font-size: 1.8rem;
+    }
+    @include breakpoint-down(small) {
+        font-size: 1.4rem;
+    }
+}
+
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
 }
 
 .flex {
@@ -122,6 +179,9 @@ p {
     @include breakpoint-down(large) {
         padding: 0 4rem;
     }
+    @include breakpoint-down(small) {
+        padding: 0 1rem;
+    }
 
     &--pt {
         padding-top: 8.4rem;
@@ -141,6 +201,9 @@ p {
 
         @include breakpoint-down(large) {
             padding: 8rem 4rem;
+        }
+        @include breakpoint-down(small) {
+            padding: 6rem 1rem;
         }
     }
     &--px {
@@ -189,6 +252,10 @@ button,
         padding: 0.8rem 1.8rem;
         letter-spacing: 1.2px;
     }
+    @include breakpoint-down(small) {
+        padding: 0.8rem 1rem;
+        letter-spacing: 1px;
+    }
 
     &__roundedBtn {
         border: 2px solid $primary;
@@ -201,5 +268,11 @@ button,
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
         -o-border-radius: 50%;
+
+        @include breakpoint-down(small) {
+            width: 3rem;
+            height: 3rem;
+            padding: 0 0.8rem;
+        }
     }
 }

@@ -2,10 +2,25 @@
     background-image: url('../assets/Large-Triangles.svg');
     background-size: cover;
     background-position: center;
-    height: 52rem;
 
-    @include breakpoint-down(large) {
-        height: 48rem;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpoint-down(small) {
+            flex-direction: column;
+        }
+    }
+
+    h2 {
+        display: inline-block;
+        margin-bottom: 4rem;
+        padding: 0 1.6rem 0.4rem 1.6rem;
+        border-bottom: 2px solid $lightPrimary;
+
+        @include breakpoint-down(medium) {
+            margin-bottom: 2rem;
+        }
     }
 
     &__info {
@@ -21,6 +36,9 @@
 
             @include breakpoint-down(large) {
                 margin-bottom: 2rem;
+            }
+            @include breakpoint-down(medium) {
+                font-size: $font-med;
             }
         }
 
@@ -47,6 +65,9 @@
 
         @include breakpoint-down(large) {
             height: 33.6rem;
+        }
+        @include breakpoint-down(small) {
+            height: 22rem;
         }
     }
 }

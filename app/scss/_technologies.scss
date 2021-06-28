@@ -2,9 +2,15 @@
     margin: -16vh auto 0 auto;
     width: 44%;
 
-    @include breakpoint-down(large) {
+    /* @include breakpoint-down(large) {
         margin: -16.4vh auto 0 auto;
         width: 60%;
+    } */
+    @include breakpoint-down(medium) {
+        width: 56%;
+    }
+    @include breakpoint-down(small) {
+        width: 70%;
     }
 
     &__box {
@@ -25,6 +31,10 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+
+        @include breakpoint-down(small) {
+            width: 120%;
+        }
     }
     &__icon {
         height: 5rem;

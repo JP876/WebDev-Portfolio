@@ -1,4 +1,4 @@
-// **** Carousel ****
+// ------------ Variables ----------- //
 const btns = Array.from(document.querySelectorAll('button'));
 let condition, firstResult, secondResult;
 let projects = {
@@ -6,6 +6,37 @@ let projects = {
     1: { className: 'projects__carousel-item-1', slidePosition: 0 },
 };
 
+const homeLink = document.getElementById('home-link');
+
+const projectsLink = document.getElementById('projects-link');
+const projectsLinkMobile = document.getElementById('projects-link-mobile');
+const projectsSection = document.querySelector('.projects');
+
+const contactLink = document.getElementById('contact-link');
+const contactLinkMobile = document.getElementById('contact-link-mobile');
+const contactSection = document.querySelector('.contact');
+
+const linksArr = [
+    projectsLink,
+    projectsLinkMobile,
+    contactLink,
+    contactLinkMobile,
+    homeLink,
+];
+const sectionsArr = [
+    { name: 'projects-link', section: projectsSection },
+    { name: 'projects-link-mobile', section: projectsSection },
+    { name: 'contact-link', section: contactSection },
+    { name: 'contact-link-mobile', section: contactSection },
+];
+
+const btnHamburger = document.getElementById('btnHamburger');
+const body = document.querySelector('body');
+const overlay = document.querySelector('.overlay');
+const fadeElems = document.querySelectorAll('.has-fade');
+const header = document.querySelector('.header');
+
+// ------------ Carousel ------------ //
 const updatePosition = projectBtn => {
     let { className, slidePosition } = projects[projectBtn];
     let slides = document.getElementsByClassName(className);
@@ -64,25 +95,81 @@ const moveToSlide = e => {
 };
 
 btns.forEach(btn => btn.addEventListener('click', e => moveToSlide(e)));
-////////////////////////////////////
+// --------------------------------------- //
 
-/* const card = document.querySelector('.projects__project');
-const container = document.querySelector('.projects__animContainer');
+// ------------ Smooth Scroll ------------ //
+linksArr.forEach(link =>
+    link.addEventListener('click', e => {
+        let pressedLink = e.srcElement.id;
+        let correctSection = sectionsArr.filter(section => section.name === pressedLink);
 
-container.addEventListener('mousemove', e => {
-    let xAxis = (window.innerWidth / 2 - e.pageX) / 60;
-    let yAxis = (window.innerHeight / 2 - e.pageY + 1200) / 60;
+        if (correctSection.length > 0) {
+            if (correctSection[0].name.slice(-6) === 'mobile') {
+                body.classList.remove('noscroll');
+                header.classList.remove('open');
+                fadeElems.forEach(function (element) {
+                    element.classList.remove('fade-in');
+                    element.classList.add('fade-out');
+                });
+                correctSection[0].section.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                correctSection[0].section.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+        }
+    })
+);
 
-    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+/* contactLinkMobile.addEventListener('click', () => {
+    body.classList.remove('noscroll');
+    header.classList.remove('open');
+    fadeElems.forEach(function (element) {
+        element.classList.remove('fade-in');
+        element.classList.add('fade-out');
+    });
+    contactSection.scrollIntoView({ behavior: 'smooth' });
 });
-
-container.addEventListener('mouseleave', e => {
-    card.style.transition = 'all 1s ease';
-    card.style.transform = 'rotateY(0deg) rotateX(0deg)';
-});
-
-container.addEventListener('mouseenter', e => {
-    card.style.transition = 'none';
+projectsLinkMobile.addEventListener('click', () => {
+    body.classList.remove('noscroll');
+    header.classList.remove('open');
+    fadeElems.forEach(function (element) {
+        element.classList.remove('fade-in');
+        element.classList.add('fade-out');
+    });
+    projectsSection.scrollIntoView({ behavior: 'smooth' });
 }); */
 
-////////////////////////////////
+// --------------------------------------- //
+
+// ------------ Header shadow ------------ //
+window.addEventListener('scroll', e => {
+    if (this.pageYOffset > 100) {
+        header.classList.add('header-shadow');
+    } else {
+        header.classList.remove('header-shadow');
+    }
+});
+// --------------------------------------- //
+
+// ------------ Hamburger menu ------------ //
+btnHamburger.addEventListener('click', function () {
+    if (header.classList.contains('open')) {
+        // Close Hamburger Menu
+        body.classList.remove('noscroll');
+        header.classList.remove('open');
+        fadeElems.forEach(function (element) {
+            element.classList.remove('fade-in');
+            element.classList.add('fade-out');
+        });
+    } else {
+        // Open Hamburger Menu
+        body.classList.add('noscroll');
+        header.classList.add('open');
+        fadeElems.forEach(function (element) {
+            element.classList.remove('fade-out');
+            element.classList.add('fade-in');
+        });
+    }
+});
+// --------------------------------------- //

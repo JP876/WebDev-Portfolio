@@ -19,10 +19,10 @@
             0 0,
             100% 0,
             100% 120vh,
-            90% 120vh,
-            calc(90% - 11rem) 100vh,
-            calc(10% + 11rem) 100vh,
-            10% 120vh,
+            84% 120vh,
+            calc(84% - 12rem) 100vh,
+            calc(16% + 12rem) 100vh,
+            16% 120vh,
             0 120vh
         );
     }
@@ -31,10 +31,22 @@
             0 0,
             100% 0,
             100% 116vh,
-            90% 116vh,
-            calc(90% - 11rem) 100vh,
-            calc(10% + 11rem) 100vh,
-            10% 116vh,
+            94% 116vh,
+            calc(94% - 10rem) 100vh,
+            calc(6% + 10rem) 100vh,
+            6% 116vh,
+            0 116vh
+        );
+    }
+    @include breakpoint-down(small) {
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 116vh,
+            100% 116vh,
+            calc(100% - 7.2rem) 100vh,
+            calc(0% + 7.2rem) 100vh,
+            0% 116vh,
             0 116vh
         );
     }
@@ -54,7 +66,16 @@
         }
 
         @include breakpoint-down(medium) {
-            width: 100%;
+            width: 90vw;
+            left: 0;
+            top: 12%;
+            margin-left: 4rem;
+        }
+        @include breakpoint-down(small) {
+            width: 90vw;
+            left: 0;
+            top: 10%;
+            margin-left: 1rem;
         }
     }
 
@@ -73,13 +94,20 @@
             top: 28%;
         }
         @include breakpoint-down(medium) {
+            width: 60%;
+            height: 60%;
             left: 50%;
-            top: 32%;
+            top: 38%;
             transform: translateX(-50%);
             -webkit-transform: translateX(-50%);
             -moz-transform: translateX(-50%);
             -ms-transform: translateX(-50%);
             -o-transform: translateX(-50%);
+        }
+        @include breakpoint-down(small) {
+            top: 46%;
+            width: 72%;
+            height: 72%;
         }
     }
 

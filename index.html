@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/style.css" />
-        <title>Document</title>
+        <title>WebDevJP</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
             href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400&display=swap"
@@ -15,15 +15,28 @@
 
     <body>
         <header class="header">
+            <div class="overlay has-fade"></div>
+
             <nav class="flex flex-jc-sb flex-ai-c container">
                 <a href="#" class="header__logo">WebDevJP</a>
 
-                <div class="header__links">
-                    <a href="#">Home</a>
-                    <a href="#">Projects</a>
-                    <a href="#">Contact</a>
+                <div class="header__links hide-for-mobile">
+                    <a href="#!" id="home-link">Home</a>
+                    <a href="#!" id="projects-link">Projects</a>
+                    <a href="#!" id="contact-link">Contact</a>
                 </div>
+
+                <a href="#" class="header__toggle hide-for-desktop" id="btnHamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
             </nav>
+
+            <div class="header__menu has-fade">
+                <a href="#!" id="projects-link-mobile">Projects</a>
+                <a href="#!" id="contact-link-mobile">Contact</a>
+            </div>
         </header>
 
         <section class="hero hero__box-rel">
@@ -84,7 +97,9 @@
 
         <section class="projects">
             <div class="container container--py">
-                <h2>Projects</h2>
+                <div class="flex flex-jc-c">
+                    <h2>Projects</h2>
+                </div>
                 <div class="projects__animContainer">
                     <div class="projects__box projects__project">
                         <h3>WeatheryForecast</h3>
@@ -131,20 +146,22 @@
                             </div>
                         </div>
                         <div class="projects__project-info">
-                            <div>
-                                <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                                    elit. Eaque reprehenderit est, corporis quia libero
-                                    quam necessitatibus, a adipisci aperiam expedita iure
-                                    velit assumenda voluptate illo mollitia, rem hic
-                                    itaque tempore.
-                                </p>
-                                <div class="projects__project-technologies">
-                                    <h6>React</h6>
-                                    <h6>Material UI</h6>
-                                    <h6>Node JS</h6>
-                                    <h6>Express</h6>
-                                </div>
+                            <p>
+                                This project aimed to develop a weather app that includes
+                                weather map layers and weather forecast of the chosen
+                                city. In order to do this, I used OpenWeather API for
+                                weather data and world cities database from SimpleMaps.
+                                Weather forecast contains current weather, hourly
+                                 forecast for two days, and daily forecast for seven days.
+                                Weather map layers include cloud, rain, snow, and
+                                temperature layer.
+                            </p>
+
+                            <div class="projects__project-technologies">
+                                <h6>React</h6>
+                                <h6>Material UI</h6>
+                                <h6>Node JS</h6>
+                                <h6>Express</h6>
                             </div>
                             <div class="projects__project-btns">
                                 <a
@@ -209,36 +226,41 @@
                             </div>
                         </div>
                         <div class="projects__project-info">
-                            <div>
-                                <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                                    elit. Eaque reprehenderit est, corporis quia libero
-                                    quam necessitatibus, a adipisci aperiam expedita iure
-                                    velit assumenda voluptate illo mollitia, rem hic
-                                    itaque tempore.
-                                </p>
+                            <p>
+                                I have spent several years doing photography, so the
+                                object of this project was to build a photography
+                                portfolio to showcase my work that also serves as the web
+                                store. I implemented login/sign-up functionality so that
+                                users can save photos to their wishlist. They also can
+                                store their personal information for effortless future
+                                purchases. For developing a web store, I used Commerce.js,
+                                an eCommerce SDK.
+                            </p>
+                            <div class="projects__project-box">
                                 <div class="projects__project-technologies">
                                     <h6>React</h6>
                                     <h6>Material UI</h6>
                                     <h6>Node JS</h6>
                                     <h6>Express</h6>
+                                    <h6>MongoDB</h6>
                                 </div>
-                            </div>
-                            <div class="projects__project-btns">
-                                <a
-                                    href="https://github.com/JP876/PhotographyPortfolioJP"
-                                    class="button"
-                                    target="_blank"
-                                >
-                                    Source Code
-                                </a>
-                                <a
-                                    href="https://photography-portfolio-jp.herokuapp.com"
-                                    class="button"
-                                    target="_blank"
-                                >
-                                    Live
-                                </a>
+
+                                <div class="projects__project-btns">
+                                    <a
+                                        href="https://github.com/JP876/PhotographyPortfolioJP"
+                                        class="button"
+                                        target="_blank"
+                                    >
+                                        Source Code
+                                    </a>
+                                    <a
+                                        href="https://photography-portfolio-jp.herokuapp.com"
+                                        class="button"
+                                        target="_blank"
+                                    >
+                                        Live
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -247,24 +269,29 @@
         </section>
 
         <section class="contact">
-            <div class="container container--py flex flex-jc-sb">
-                <div class="contact__info">
-                    <p>
-                        If you have any questions, feel free to contact me throw the email
-                        down below
-                    </p>
-                    <h5>
-                        Email:
-                        <span>webDevJP@gmail.com</span>
-                    </h5>
+            <div class="container container--py">
+                <div class="flex flex-jc-c">
+                    <h2>Contact</h2>
                 </div>
-                <div class="contact__img"></div>
+                <div class="contact__container">
+                    <div class="contact__info">
+                        <p>
+                            If you have any questions, feel free to contact me throw the
+                            email down below
+                        </p>
+                        <h5>
+                            Email:
+                            <span>popovicjosip867@gmail.com</span>
+                        </h5>
+                    </div>
+                    <div class="contact__img"></div>
+                </div>
             </div>
         </section>
 
         <footer class="footer">
             <div class="container">
-                <h6>Portfolio</h6>
+                <h6>Portfolio by Josip Popović</h6>
             </div>
         </footer>
 
