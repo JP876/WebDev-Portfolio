@@ -49,7 +49,7 @@ h1 {
         font-size: 3.6rem;
     }
     @include breakpoint-down(small) {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 }
 h2 {
@@ -227,7 +227,7 @@ button,
     -o-border-radius: 0.8rem;
     letter-spacing: 2px;
     cursor: pointer;
-    background: $primary;
+    background: $darkLightPrimaryGrad;
     border: none;
     box-shadow: 0 0.6rem 1.2rem rgba($darkerGrey, 0.28);
     color: $white;

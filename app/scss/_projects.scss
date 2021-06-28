@@ -12,7 +12,28 @@
         display: inline-block;
         margin-bottom: 6rem;
         padding: 0 1.6rem 0.4rem 1.6rem;
-        border-bottom: 2px solid $lightPrimary;
+        position: relative;
+
+        &::before {
+            background: $darkLightPrimaryGrad;
+            content: '';
+            display: block;
+            position: absolute;
+            height: 4px;
+            width: 112%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: -1rem;
+            border-radius: 2rem;
+            -webkit-border-radius: 2rem;
+            -moz-border-radius: 2rem;
+            -ms-border-radius: 2rem;
+            -o-border-radius: 2rem;
+            -webkit-transform: translate(-50%, 0);
+            -moz-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            -o-transform: translate(-50%, 0);
+        }
 
         @include breakpoint-down(medium) {
             margin-bottom: 4.8rem;
@@ -32,7 +53,6 @@
         width: 80%;
         margin: 0 auto;
         padding: 2.4rem 4rem;
-        //padding: 2.8rem 7.6rem;
         box-shadow: 0 1rem 1rem rgba($darkerGrey, 0.14), 0 0 3rem rgba($darkerGrey, 0.14);
         border-radius: 0.6rem;
         -webkit-border-radius: 0.6rem;

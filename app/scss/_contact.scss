@@ -16,7 +16,28 @@
         display: inline-block;
         margin-bottom: 4rem;
         padding: 0 1.6rem 0.4rem 1.6rem;
-        border-bottom: 2px solid $lightPrimary;
+        position: relative;
+
+        &::before {
+            background: $darkLightPrimaryGrad;
+            content: '';
+            display: block;
+            position: absolute;
+            height: 4px;
+            width: 112%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: -1rem;
+            border-radius: 2rem;
+            -webkit-border-radius: 2rem;
+            -moz-border-radius: 2rem;
+            -ms-border-radius: 2rem;
+            -o-border-radius: 2rem;
+            -webkit-transform: translate(-50%, 0);
+            -moz-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            -o-transform: translate(-50%, 0);
+        }
 
         @include breakpoint-down(medium) {
             margin-bottom: 2rem;

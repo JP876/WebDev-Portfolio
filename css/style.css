@@ -42,7 +42,7 @@ h1 {
       font-size: 3.6rem; } }
   @media (max-width: 39.9375em) {
     h1 {
-      font-size: 3rem; } }
+      font-size: 2.8rem; } }
 
 h2 {
   font-size: 4.8rem;
@@ -187,7 +187,7 @@ button,
   -o-border-radius: 0.8rem;
   letter-spacing: 2px;
   cursor: pointer;
-  background: #0e918c;
+  background: linear-gradient(to right, #085350, #11b0aa);
   border: none;
   box-shadow: 0 0.6rem 1.2rem rgba(48, 49, 40, 0.28);
   color: #f9f9f8;
@@ -472,7 +472,26 @@ button,
     display: inline-block;
     margin-bottom: 6rem;
     padding: 0 1.6rem 0.4rem 1.6rem;
-    border-bottom: 2px solid #11b0aa; }
+    position: relative; }
+    .projects h2::before {
+      background: linear-gradient(to right, #085350, #11b0aa);
+      content: '';
+      display: block;
+      position: absolute;
+      height: 4px;
+      width: 112%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      bottom: -1rem;
+      border-radius: 2rem;
+      -webkit-border-radius: 2rem;
+      -moz-border-radius: 2rem;
+      -ms-border-radius: 2rem;
+      -o-border-radius: 2rem;
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0); }
     @media (max-width: 63.9375em) {
       .projects h2 {
         margin-bottom: 4.8rem; } }
@@ -608,7 +627,26 @@ button,
     display: inline-block;
     margin-bottom: 4rem;
     padding: 0 1.6rem 0.4rem 1.6rem;
-    border-bottom: 2px solid #11b0aa; }
+    position: relative; }
+    .contact h2::before {
+      background: linear-gradient(to right, #085350, #11b0aa);
+      content: '';
+      display: block;
+      position: absolute;
+      height: 4px;
+      width: 112%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      bottom: -1rem;
+      border-radius: 2rem;
+      -webkit-border-radius: 2rem;
+      -moz-border-radius: 2rem;
+      -ms-border-radius: 2rem;
+      -o-border-radius: 2rem;
+      -webkit-transform: translate(-50%, 0);
+      -moz-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0); }
     @media (max-width: 63.9375em) {
       .contact h2 {
         margin-bottom: 2rem; } }
